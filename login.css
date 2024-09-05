@@ -1,0 +1,107 @@
+body{
+    font-family: 'Lucida Grande', tahoma,verdana,arial,sans-serif;
+    margin: 0;
+}
+#table1{
+    img{
+        width: 182px;
+        height: 34px;
+    }
+    width: 100%;
+    min-width: 1540px;
+    height: 90px;
+    background-color: #395899;
+    #td1{
+        width: 1000px;
+        margin-right: 900px;
+        text-align: center;
+        vertical-align: bottom;
+    }
+    #table3{
+        #t1{
+            color: white;
+        }
+        #t2{
+            color: white;
+        }
+        #t3{
+            font-size: small;
+            color: gray;
+        }
+        #t4{
+            font-size: small;
+            color: gray;
+        }
+    }
+    #table4{
+        vertical-align: bottom;
+    }
+}
+
+#table2{
+    background-color: #edf0f5;
+    width: 100%;
+    min-width: 1540px;
+    height: 606px;
+    #td2{
+        text-align: center;
+        width: 1022px;
+    }
+    #td3{
+        text-align: left;
+        width: 898px;
+        height: 606px;
+        vertical-align: top;
+        #p1{
+            font-size: 36px;
+            font-family: 'Open Sans',sans-serif;
+        }
+        #p2{
+            font-size: 19px;
+            font-family: 'Open Sans',sans-serif;
+        }
+        #p3{
+            font-size: 11px;
+            font-family: 'Open Sans',sans-serif;
+        }
+        #form1{
+            #inp1{
+                width: 409px;
+                height: 40px;
+                font-size: 18px;
+            }
+            #inp2{
+                width: 409px;
+                height: 40px;
+                font-size: 18px;
+            }
+            #inp3{
+                width: 409px;
+                height: 40px;
+                font-size: 18px;
+            }
+            #inp4{
+                width: 192px;
+                height: 40px;
+                font-size: 18px;
+            }
+            #inp5{
+                width: 192px;
+                height: 40px;
+                font-size: 18px;
+            }
+            #button1{
+                background-color: #69a455;
+                color: white;
+                height: 42px;
+                width: 195px;
+                border-radius: 12px;
+                font-size: 19px;
+            }
+            #a1{
+                text-decoration: none;
+                font-size: 11px;
+            }
+        }
+    }
+}

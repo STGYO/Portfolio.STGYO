@@ -1,0 +1,87 @@
+<!--BMI CALCULATOR-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body background="calculator_bg.jpg">
+<center>
+    <h1 style="font-size: xx-large; color: white">BMI CALCULATOR</h1>
+    <br>
+    <main>
+        <div class="card" style="height: 650px; width: 700px">
+            <div class="card-body">
+                <div class="card-img"><img id="displayImage" src="default.png" alt="default" style="width: 300px; height: 200px"></div>
+                <br>
+                <form>
+                    Enter Height: <input type="number" id="feet" placeholder="Feet" style="width: 200px; height: 30px">
+                    <input type="number" id="inch" placeholder="Inch" style="width: 200px; height: 30px">
+                    <br><br>
+                    Enter Weight: <input type="number" id="wei" placeholder="Kg" style="width: 200px; height: 30px">
+                    <br><br>
+                    Enter Age: <input type="number" id="age" placeholder="Age" style="width: 200px; height: 30px">
+                    <br><br>
+                    Gender:
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <br><br>
+                    <input type="button" onclick="calculateBMI()" value="Calculate" class="btn btn-primary">
+                    <br><br>
+                    <input type="text" id="output" readonly style="height: 40px; width: 190px">
+                </form>
+            </div>
+        </div>
+        <br>
+    </main>
+</center>
+
+<script>
+    function calculateBMI() {
+        let feet = parseFloat(document.getElementById("feet").value);
+        let inch = parseFloat(document.getElementById("inch").value);
+        let weight = parseFloat(document.getElementById("wei").value);
+        let age = parseFloat(document.getElementById("age").value);
+        let gender = document.querySelector('input[name="gender"]:checked');
+
+        if (!feet || !inch || !weight || !age || !gender) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        let heightInMeters = (feet / 3.281) + (inch / 39.37);
+        let bmi = weight / (heightInMeters * heightInMeters);
+
+        document.getElementById("output").value = bmi.toFixed(2);
+        changeImage(bmi);
+    }
+
+    function changeImage(bmi) {
+        let image = document.getElementById("displayImage");
+        if (bmi <= 18.5) {
+            image.src = "Gauge_Underweight.png";
+            image.alt = "Underweight";
+        } else if (bmi > 18.5 && bmi < 25) {
+            image.src = "Normal_Weight.png";
+            image.alt = "Normal Weight";
+        } else if (bmi >= 25 && bmi < 30) {
+            image.src = "Gauge_Overweight.png";
+            image.alt = "Overweight";
+        } else {
+            image.src = "Obese_Weight.png";
+            image.alt = "Obese";
+        }
+    }
+</script>
+
+</body>
+</html>
